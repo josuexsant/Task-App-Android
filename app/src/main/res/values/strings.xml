@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Task</string>
+    <string name="Titulo">Tus notas</string>
+
+    <string name="titulo_A2">Agrega una nota</string>
+    <string name="info_A2">Asunto</string>
+    <string name="info2_A3">Descripcion:</string>
+
+    <string name="hintparatexto">Escribe algo…</string>
+
+    <string name="item1">Guardar</string>
+    <string name="item2">help</string>
+</resources>
