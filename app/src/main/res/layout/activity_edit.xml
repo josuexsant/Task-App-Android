@@ -6,23 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".Edit">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/memuEditar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/teal_200"
+        app:title="Agrega una nota"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/titulo_A2"
-            android:textColor="@color/black"
-            android:textSize="20sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/memuEditar">
 
         <TextView
             android:layout_width="match_parent"
@@ -30,34 +29,35 @@
             android:text="@string/info_A2"
             android:textAlignment="center"
             android:textColor="@color/black" />
+
         <EditText
             android:id="@+id/Asunto"
             android:layout_width="match_parent"
-            android:gravity="start"
-            android:padding="10dp"
             android:layout_height="80dp"
             android:layout_margin="5dp"
             android:background="@drawable/boxcircle"
-            android:hint="@string/hintparatexto" />
+            android:gravity="start"
+            android:hint="@string/hintparatexto"
+            android:padding="10dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/info2_A3"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:text="@string/info2_A3" />
+            android:textSize="15sp" />
 
         <EditText
-            android:gravity="start"
-            android:padding="10dp"
             android:id="@+id/ContenedorTexto"
-            android:background="@drawable/boxcircle"
             android:layout_width="match_parent"
-            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:hint="@string/hintparatexto" />
+            android:layout_margin="5dp"
+            android:background="@drawable/boxcircle"
+            android:gravity="start"
+            android:hint="@string/hintparatexto"
+            android:padding="10dp" />
 
-        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
