@@ -5,6 +5,7 @@
     <string name="titulo_A2">Agrega una nota</string>
     <string name="info_A2">Asunto</string>
     <string name="info2_A3">Descripcion:</string>
+    <string name="info3_A2">Titulo</string>
     <!--String para hint de texto-->
     <string name="hintparatexto">Escribe algo…</string>
     <!--Strings para los menus-->
