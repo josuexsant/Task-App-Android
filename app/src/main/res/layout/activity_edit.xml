@@ -11,8 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/teal_200"
-        app:title="Agrega una nota"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Agrega una nota" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -23,21 +26,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/memuEditar">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/info_A2"
-            android:textAlignment="center"
-            android:textColor="@color/black" />
-
         <EditText
-            android:id="@+id/Asunto"
+            android:id="@+id/titulo_note"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_margin="5dp"
             android:background="@drawable/boxcircle"
             android:gravity="start"
-            android:hint="@string/hintparatexto"
+            android:hint="@string/info3_A2"
             android:padding="10dp" />
 
         <TextView
@@ -49,7 +45,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/ContenedorTexto"
+            android:id="@+id/texto_note"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
