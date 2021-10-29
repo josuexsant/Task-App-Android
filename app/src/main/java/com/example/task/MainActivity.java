@@ -11,12 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-/**
- * @author Josue Santamaria
- * @see <a href = "josuexsanta@gmail.com">e-mail</a>
- * @version 1.0
- * @
- */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -27,12 +21,11 @@ public class MainActivity extends AppCompatActivity {
         //barra de herramientas
         Toolbar barra = findViewById(R.id.toolbar);
         setSupportActionBar(barra);
+        //----------
+
     }
 
     public void editNote(View view){
-        /**
-         * Inicia Activity para editar la nota
-         */
         Intent editScreen = new Intent(this, Edit.class);
         startActivity(editScreen);
     }

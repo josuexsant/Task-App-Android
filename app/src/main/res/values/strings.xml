@@ -1,4 +1,6 @@
 <resources>
+    <!--Name-->
+    <string name="app_name">Task</string>
     <!--Strings para Activity Main-->
     <string name="Titulo">Tus notas</string>
     <!--Strings para Activity Edit-->
