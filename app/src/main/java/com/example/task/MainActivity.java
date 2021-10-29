@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView letras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +24,12 @@ public class MainActivity extends AppCompatActivity {
         //barra de herramientas
         Toolbar barra = findViewById(R.id.toolbar);
         setSupportActionBar(barra);
+        setUpView();
+        //----------
+
     }
 
-    public void editNote(View view){
+    public void editNote(View view) {
         Intent editScreen = new Intent(this, Edit.class);
         startActivity(editScreen);
     }
@@ -36,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.Info:
                 Intent infoScreen = new Intent(this, InfoActivity.class);
                 startActivity(infoScreen);
@@ -47,4 +53,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void setUpView(){
+        letras = findViewById(R.id.prueba);
+    }
+
 }

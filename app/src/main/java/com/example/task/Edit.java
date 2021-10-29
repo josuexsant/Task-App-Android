@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,12 +12,12 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 public class Edit extends AppCompatActivity {
     private EditText titulo;
     private EditText texto;
-    private int time = 100;
-    private int noNote = 1;
-    Nota nota[] = new Nota[noNote];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class Edit extends AppCompatActivity {
 
         Toolbar barraEdicion = findViewById(R.id.memuEditar);       //Asignamos una toolbar
         setSupportActionBar(barraEdicion);
+        setUpView(); //Inicia los editText
     }
     //Metodo para el boton de guardar en la toolbar--------------------/
     public boolean onCreateOptionsMenu(Menu menu){
@@ -34,18 +36,31 @@ public class Edit extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.backtomain){
+            create();
             Intent Main = new Intent(this, MainActivity.class);
             startActivity(Main);
-            Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public void newNote(){          //Obtenemos los datos de la nota
+    public void setUpView(){
+        texto = findViewById(R.id.texto_note);
         titulo = findViewById(R.id.titulo_note);
-        texto = findViewById(R.id.titulo_note);
-        nota[noNote--] = new Nota(titulo.getText().toString(), texto.getText().toString(), time);
+    }
+    public void create(){
+        String ID = titulo + ".txt";
+        String str = "hola";
+        String str2 = "djgnjkdfbgljfkgbfjklg";
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("todoki.txt", Activity.MODE_PRIVATE));
+            archivo.write(str2);
+            archivo.flush();
+            archivo.close();
+        }catch (IOException e){
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(this, "si funciona", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }
