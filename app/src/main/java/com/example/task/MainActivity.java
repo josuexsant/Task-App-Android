@@ -24,11 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //barra de herramientas
         Toolbar barra = findViewById(R.id.toolbar);
         setSupportActionBar(barra);
-        setUpView();
-        //----------
-
     }
-
     public void editNote(View view) {
         Intent editScreen = new Intent(this, Edit.class);
         startActivity(editScreen);
@@ -50,12 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Proximamente", Toast.LENGTH_SHORT).show();
             default:
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
-
-    public void setUpView(){
-        letras = findViewById(R.id.prueba);
-    }
-
 }

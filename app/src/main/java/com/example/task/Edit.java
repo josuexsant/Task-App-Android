@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -36,7 +37,18 @@ public class Edit extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.backtomain){
-            create();
+            String str = "djgnjkdfbgljfkgbfjklg";
+            try {
+                OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("todoki.txt", Activity.MODE_PRIVATE));
+                archivo.write(str);
+                archivo.flush();
+                archivo.close();
+                Log.d("TAG1", "Creado en :" + getFilesDir() + "/" + "todoki.txt");
+                Toast.makeText(getApplicationContext(), "exito", Toast.LENGTH_SHORT).show();
+            }catch (IOException e){
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+            }
+            finish();
             Intent Main = new Intent(this, MainActivity.class);
             startActivity(Main);
         }else{
@@ -47,20 +59,5 @@ public class Edit extends AppCompatActivity {
     public void setUpView(){
         texto = findViewById(R.id.texto_note);
         titulo = findViewById(R.id.titulo_note);
-    }
-    public void create(){
-        String ID = titulo + ".txt";
-        String str = "hola";
-        String str2 = "djgnjkdfbgljfkgbfjklg";
-        try {
-            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("todoki.txt", Activity.MODE_PRIVATE));
-            archivo.write(str2);
-            archivo.flush();
-            archivo.close();
-        }catch (IOException e){
-            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-        }
-        Toast.makeText(this, "si funciona", Toast.LENGTH_SHORT).show();
-        finish();
     }
 }
