@@ -11,6 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+/**
+ * @author Josue Santamaria
+ * @see <a href = "josuexsanta@gmail.com">e-mail</a>
+ * @version 1.0
+ * @
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
