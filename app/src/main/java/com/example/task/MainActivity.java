@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editNote(View view){
+        /**
+         * Inicia Activity para editar la nota
+         */
         Intent editScreen = new Intent(this, Edit.class);
         startActivity(editScreen);
     }
